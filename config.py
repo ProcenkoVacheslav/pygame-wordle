@@ -38,8 +38,11 @@ class Configurations:
             file.write(f'{self.win_games}\n')
 
     def update(self) -> None:
+        img = pg.image.load('img/ico.jpg')
+
         pg.display.flip()
         pg.display.set_caption('WORDLE')
+        pg.display.set_icon(img)
         self.clock.tick(FPS)
         self.root.fill(BG_COLOR)
 
