@@ -5,7 +5,7 @@ from settings import *
 
 
 class GameLogic(Draw):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
     def end_game(self) -> None:
@@ -18,7 +18,7 @@ class GameLogic(Draw):
             return 2
         return 0
 
-    def change_color(self):
+    def change_color(self) -> None:
         mouse_pos = pg.mouse.get_pos()
 
         if self.restart_button.collidepoint(mouse_pos) and not self.continue_game:
@@ -26,7 +26,7 @@ class GameLogic(Draw):
         else:
             self.restart_button_color = BUTTON_DIS_ACTIVE_COLOR
 
-    def restart_all_game(self):
+    def restart_all_game(self) -> None:
         self.total_word = self.restart_game()
         self.word = ['']
         self.draw_word = [[]]
