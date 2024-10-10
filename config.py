@@ -25,16 +25,16 @@ class Configurations:
 
     @staticmethod
     def get_words() -> list:
-        with open('files/words.txt', 'r', encoding='utf-8') as file:
+        with open('words.txt', 'r', encoding='utf-8') as file:
             return file.readlines()
 
     @staticmethod
     def get_win_games() -> int:
-        with open('files/attempts.txt', 'r') as file:
+        with open('attempts.txt', 'r') as file:
             return int(file.read()[:-1])
 
     def save_win_games(self) -> None:
-        with open('files/attempts.txt', 'w') as file:
+        with open('attempts.txt', 'w') as file:
             file.write(f'{self.win_games}\n')
 
     def update(self) -> None:
